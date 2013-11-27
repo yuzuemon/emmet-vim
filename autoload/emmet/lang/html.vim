@@ -367,7 +367,7 @@ function! emmet#lang#html#toString(settings, current, type, inline, filters, ite
       if g:emmet_html5
         let str .= ' ' . attr
       else
-        let str .= ' ' . attr . '="' . attr . '"'
+        let str .= ' ' . attr . "='" . attr . "'"
       endif
       if emmet#useFilter(filters, 'c')
         if attr == 'id' | let comment .= '#' . Val | endif
@@ -385,7 +385,7 @@ function! emmet#lang#html#toString(settings, current, type, inline, filters, ite
         endwhile
         let attr = substitute(attr, '\$$', itemno+1, '')
       endif
-      let str .= ' ' . attr . '="' . Val . '"'
+      let str .= ' ' . attr . "='" . Val . "'"
       if emmet#useFilter(filters, 'c')
         if attr == 'id' | let comment .= '#' . Val | endif
         if attr == 'class' | let comment .= '.' . Val | endif
